@@ -1,0 +1,170 @@
+@font-face {
+  font-family: 'Astron';
+  src: url('fonts/Astron.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #001f4d;
+  font-family: 'Astron', sans-serif;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.vertical-left, .vertical-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.vertical-left {
+  left: 5px;
+  transform: rotate(180deg);
+}
+
+.vertical-right {
+  right: 5px;
+}
+
+header {
+  text-align: center;
+  padding-top: 30px;
+}
+header .logo img {
+  height: 1em; /* Define a altura da imagem para ser igual ao tamanho da fonte do texto "SPACER'S" */
+  vertical-align: middle; /* Alinha a imagem verticalmente com o texto ao lado */
+  margin-left: 5px; /* Opcional: adiciona um pequeno espaço entre o texto "SPACER'S" e a imagem */
+}
+
+.logo {
+  font-size: 34px;
+  letter-spacing: 3px;
+  color: white;
+  line-height: 1.2;
+}
+
+.logo span {
+  font-size: 14px;
+  color:#ffffff;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.menu a {
+  background-color: white;
+  color: #001f4d;
+  text-decoration: none;
+  padding: 8px 25px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-family: 'Astron', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #00ffff;
+  color: #001f4d;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.conteudo {
+  display: flex;
+  gap: 40px;
+  max-width: 950px;
+  width: 100%;
+}
+
+.box-texto {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1;
+}
+
+.box-texto h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.box-texto p {
+  font-size: 13px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+
+.box-imagem {
+  width: 250px;
+  height: 160px;
+  background-color: white;
+  border-radius: 15px;
+}
+.software-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color:#001f4d;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 260px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  width: 70px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.caixa-com-texto-centralizado {
+  text-align: center;
+}
