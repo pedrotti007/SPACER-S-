@@ -46,9 +46,9 @@ header {
   padding-top: 30px;
 }
 header .logo img {
-  height: 1em; /* Define a altura da imagem para ser igual ao tamanho da fonte do texto "SPACER'S" */
-  vertical-align: middle; /* Alinha a imagem verticalmente com o texto ao lado */
-  margin-left: 5px; /* Opcional: adiciona um pequeno espaço entre o texto "SPACER'S" e a imagem */
+  height: 1em;
+  vertical-align: middle;
+  margin-left: 5px;
 }
 
 .logo {
@@ -167,4 +167,26 @@ main {
 
 .caixa-com-texto-centralizado {
   text-align: center;
+}
+.titulo-aside{ 
+  text-align: center;
+}
+.YouTube {
+  display: block;
+  height: 450px;
+  border-style: none;
+  border-color: rgb(94, 69, 47);
+  margin: 20px auto;
+}
+.cta-button {
+  text-align: center;
+  margin: 20px;
+  display: block;
+  background-color: #001f4d;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+        margin-top: 10px;
+  color: white;
+  padding: 10px 20px;
 }
