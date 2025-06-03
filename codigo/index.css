@@ -5,8 +5,8 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Questrial';
-  src: url('fonts/Questrial-Regular.otf') format('opentype');
+  font-family: 'NovaFonte'; /* Substitua 'NovaFonte' pelo nome da sua fonte */
+  src: url('fonts/NovaFonte.otf') format('opentype'); /* Substitua NovaFonte.otf pelo nome do seu arquivo de fonte */
   font-weight: normal;
   font-style: normal;
 }
@@ -23,7 +23,7 @@ body {
   color: white;
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevents horizontal scrollbar from vertical text */
 }
 
 .vertical-left, .vertical-right {
@@ -36,20 +36,22 @@ body {
   font-weight: bold;
   letter-spacing: 2px;
   color: white;
+  z-index: -1; /* Ensure text is behind content */
 }
 
 .vertical-left {
-  left: 5px;
-  transform: rotate(180deg);
+  left: 15px; /* Adjusted for more space */
 }
 
 .vertical-right {
-  right: 5px;
+  right: 15px; /* Adjusted for more space */
 }
 
 header {
   text-align: center;
   padding-top: 30px;
+  padding-left: 20px; /* Add padding for larger screens */
+  padding-right: 20px; /* Add padding for larger screens */
 }
 header .logo img {
   height: 1em;
@@ -74,6 +76,7 @@ header .logo img {
   justify-content: center;
   gap: 25px;
   margin-top: 20px;
+  flex-wrap: wrap; /* Allow menu items to wrap */
 }
 
 .menu a {
@@ -103,14 +106,21 @@ main {
   gap: 40px;
   max-width: 950px;
   width: 100%;
+  flex-wrap: wrap; /* Allow content boxes to wrap */
+  justify-content: center; /* Center items when wrapped */
 }
 
 .box-texto {
   background-color: white;
   color: black;
   padding: 20px;
-  border-radius: 15px;
-  flex: 1;
+  border-radius: 20px; /* Consistent with .card */
+  flex: 1 1 260px; /* Adjust flex-basis to match card width */
+  min-width: 260px; /* Consistent minimum width */
+  max-width: 260px; /* Consistent maximum width like .card */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack internal content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Consistent with .card */
 }
 
 .box-texto h2 {
@@ -118,23 +128,52 @@ main {
   text-transform: uppercase;
   margin-bottom: 10px;
   font-weight: bold;
+  text-align: center; /* Center heading */
+  font-family: 'NovaFonte', sans-serif; /* Aplicando a nova fonte */
 }
 
 .box-texto p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
-  font-family:Questrial, sans-serif;
-  font-size: medium;
+  font-family: 'NovaFonte', sans-serif; /* Aplicando a nova fonte */
+  margin-bottom: 10px; /* Add margin between paragraphs */
+  text-align: left; /* Align list items to the left */
 }
 
-.box-imagem {
-  width: 250px;
-  height: 160px;
-  background-color: white;
-  border-radius: 15px;
+/* Style for the price info paragraph */
+.box-texto p.preco-info {
+    text-align: center; /* Center price info */
+    margin-top: auto; /* Push price info to the bottom */
+    padding-top: 15px; /* Add space above price */
 }
+
+/* Style for the price span */
+.box-texto p.preco-info span {
+    display: block; /* Make span a block element */
+    font-size: 1.8em; /* Larger font size for price */
+    font-weight: bold;
+    color: #001f4d; /* Darker color for price */
+    margin-bottom: 10px; /* Space below price */
+}
+
+
+.box-imagem {
+  width: 250px; /* Fixed width for larger screens */
+  height: 160px; /* Fixed height for larger screens */
+  background-color: white; /* Background might not be needed if image fills it */
+  border-radius: 15px;
+  overflow: hidden; /* Hide parts of the image that exceed the container */
+  flex-shrink: 0; /* Prevent image box from shrinking below its size on larger screens */
+}
+
+.box-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+
 .software-cards {
-  /* Already somewhat responsive due to flex-wrap */
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -147,15 +186,17 @@ main {
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
-  max-width: 260px; /* Max width for larger screens */
+  max-width: 260px;
+  width: 100%; /* Allow card to take full width on small screens */
   text-align: center;
-  font-family: Arial, sans-serif;
+  /* A fonte dos parágrafos e títulos dentro do card será definida abaixo */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .card-icon {
   width: 90px;
-  max-width: 100%; /* Ensure icon scales down */
+  max-width: 100%;
   height: auto;
   margin-bottom: 15px;
 }
@@ -166,37 +207,156 @@ main {
   color: #003366;
   margin-bottom: 10px;
   text-transform: uppercase;
+  font-family: 'NovaFonte', sans-serif; /* Aplicando a nova fonte */
 }
 
 .card p {
   font-size: 14px;
   color: #333;
   line-height: 1.4;
+  font-family: 'NovaFonte', sans-serif; /* Aplicando a nova fonte */
 }
 
 .caixa-com-texto-centralizado {
   text-align: center;
 }
-.titulo-aside{ 
+.titulo-aside{
   text-align: center;
+  color: white; /* Ensure title is visible against dark background */
+  margin-bottom: 20px;
+  font-size: 1.8em;
 }
 .YouTube {
   display: block;
-  height: auto; /* Make height responsive */
+  height: auto;
   border-style: none;
-  aspect-ratio: 16 / 9; /* Maintain video aspect ratio */
-  border-color: rgb(94, 69, 47);
+  aspect-ratio: 16 / 9;
+  max-width: 800px; /* Limit max width of video */
+  width: 100%; /* Make video responsive */
   margin: 20px auto;
 }
 .cta-button {
   text-align: center;
-  margin: 20px;
   display: block;
-  background-color: #001f4d;
+  background-color: #00ffff; /* Changed color for contrast */
+  color: #001f4d; /* Changed text color */
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-        margin-top: 10px;
-  color: white;
-  padding: 10px 20px;
+  margin: 20px auto; /* Adjusted margin */
+  padding: 12px 25px; /* Adjusted padding */
+  font-size: 1.1em;
+  transition: background-color 0.3s, transform 0.3s;
+  max-width: 200px; /* Limit button width */
+}
+
+.cta-button:hover {
+    background-color: #00cccc; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  /* Hide vertical texts on smaller screens */
+  .vertical-left, .vertical-right {
+    display: none;
+  }
+
+  /* Header adjustments */
+  header {
+    padding: 20px 10px; /* Adjust padding */
+  }
+  .logo {
+    font-size: 28px; /* Smaller logo text */
+    letter-spacing: 2px;
+  }
+  .logo span {
+    font-size: 12px; /* Smaller subtext */
+  }
+  .menu {
+    flex-direction: column; /* Stack menu items */
+    gap: 10px; /* Adjust gap */
+    margin-top: 15px;
+    width: 100%; /* Make menu take full width */
+    align-items: center; /* Center menu items */
+  }
+  .menu a {
+    padding: 10px 20px; /* Adjust padding */
+    width: 80%; /* Make links wider "buttons" */
+    text-align: center; /* Center text in links */
+  }
+
+  /* Main content layout */
+  main {
+    padding: 30px 10px; /* Adjust padding */
+  }
+  .conteudo {
+    flex-direction: column; /* Stack box-texto and box-imagem */
+    gap: 30px; /* Adjust gap */
+    max-width: 100%; /* Allow full width */
+  }
+  .box-texto {
+    flex: none; /* Remove flex-grow/shrink */
+    width: 100%; /* Take full width */
+    min-width: 0; /* Allow shrinking on very small screens */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    padding: 15px; /* Adjust padding */
+    flex-basis: auto; /* Reset flex-basis in mobile */
+  }
+  .box-texto h2 {
+    font-size: 1.1em; /* Relative size */
+  }
+  .box-texto p {
+    font-size: 0.9em; /* Relative size */
+  }
+  .box-imagem {
+    width: 90%; /* Take most of the width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image box */
+    flex-shrink: 1; /* Allow shrinking in mobile */
+  }
+  .box-imagem img {
+      height: auto; /* Ensure image scales */
+  }
+
+
+  /* Software cards layout */
+  .software-cards {
+    padding: 30px 10px; /* Adjust padding */
+    gap: 20px; /* Adjust gap */
+  }
+  .card {
+    max-width: 90%; /* Allow cards to take more width */
+    width: 90%; /* Ensure they take width */
+    padding: 15px; /* Adjust padding */
+    flex-basis: 90%; /* Use flex-basis for better flex behavior */
+  }
+  .card-icon {
+    width: 60px; /* Smaller icon */
+  }
+  .card h3 {
+    font-size: 1em; /* Relative size */
+  }
+  .card p {
+    font-size: 0.9em; /* Relative size */
+  }
+
+  /* YouTube iframe */
+  .YouTube {
+    height: auto; /* Remove fixed height */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    margin: 15px auto; /* Adjust margin */
+  }
+
+  /* CTA Button */
+  .cta-button {
+    margin: 15px auto; /* Adjust margin */
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 1em; /* Relative size */
+  }
+  .titulo-aside {
+      font-size: 1.5em; /* Adjust title size */
+  }
 }
