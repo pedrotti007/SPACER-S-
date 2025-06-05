@@ -326,6 +326,7 @@ main {
     padding: 30px 10px; /* Adjust padding */
     gap: 20px; /* Adjust gap */
   }
+
   .card {
     max-width: 90%; /* Allow cards to take more width */
     width: 90%; /* Ensure they take width */
@@ -359,4 +360,19 @@ main {
   .titulo-aside {
       font-size: 1.5em; /* Adjust title size */
   }
+}
+
+/* Estilo para a foto arredondada na página sobre.html */
+/* Adicione a classe "foto-sobre-arredondada" à tag <img> em sobre.html */
+.foto-sobre-arredondada {
+  width: 200px; /* Defina a largura desejada */
+  height: 200px; /* Defina a altura desejada (igual à largura para um círculo) */
+  border-radius: 50%; /* Isso cria a borda arredondada/circular */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer, cortando o excesso */
+  display: block; /* Para permitir a aplicação de margens auto e remover espaços extras */
+  margin-left: auto; /* Para centralizar a imagem, se for um elemento de bloco */
+  margin-right: auto; /* Para centralizar a imagem, se for um elemento de bloco */
+  margin-top: 20px; /* Espaçamento superior opcional */
+  margin-bottom: 20px; /* Espaçamento inferior opcional */
+  border: 3px solid #00ffff; /* Opcional: adiciona uma borda na cor ciano do seu tema */
 }
